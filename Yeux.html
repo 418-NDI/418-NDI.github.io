@@ -18,11 +18,11 @@
     <select class="nav-link" name="partie_corps" id="body_select" onchange="navigateToPage()">
       <option value="">-- Sélectionnez une partie --</option>
       
+        <option value="Peau.html">Peau</option>
+      
         <option value="C%C5%93ur.html">Cœur</option>
       
         <option value="Poumons.html">Poumons</option>
-      
-        <option value="Peau.html">Peau</option>
       
         <option value="Veines.html">Veines</option>
       
@@ -47,6 +47,7 @@
     </select>
     <a class="nav-link" href="podcast.html">Podcast</a>
     <a class="nav-link" href="recherche.html">Recherche</a>
+    <a class="nav-link" href="about.html">À propos de nous</a>
   </nav>
 </header>
 <script>
@@ -65,10 +66,13 @@
 <h1>Yeux</h1>
 
 <p>Vous êtes dans les yeux. <br /> Les yeux humains captent la lumière et permettent de percevoir l'environnement. <br /> Les océans, de leur côté, jouent un rôle similaire en captant la lumière du soleil et en la redistribuant dans les profondeurs. Cela influence les cycles de vie des espèces marines et le climat.</p>
-<img src="static/ampoule.png" class="sachiez" /><p>Le sachiez-vous ?</p>
+<div class="information">
+  <img src="static/ampoule.png" class="sachiez" />
+  <p class="info-titre">Le sachiez-vous ?</p>
+</div>
 <p>La pénétration de la lumière dans l'océan permet la photosynthèse dans les zones éclairées, soutenant la vie marine.</p>
 <form>
-  <input type="button" value="Tout va bien" class="bouton"/>
+  <input type="button" value="Tout va bien" class="on"/>
 </form>
 <p class="consequences">Les océans captent efficacement la lumière et soutiennent les cycles biologiques et climatiques grâce à la photosynthèse.</p>
 <script>
@@ -81,9 +85,11 @@
     if (btn.value === "Tout va bien") {
       btn.value = "Tout va mal";
       txt.textContent = "L'augmentation de la pollution des océans et de l'acidification affecte la capacité des écosystèmes marins à utiliser la lumière, menaçant les chaînes alimentaires marines.";
+      btn.classList.replace('on', 'off');
     } else {
       btn.value = "Tout va bien";
       txt.textContent = "Les océans captent efficacement la lumière et soutiennent les cycles biologiques et climatiques grâce à la photosynthèse.";
+      btn.classList.replace('off', 'on');
     }
   }
 </script> 
